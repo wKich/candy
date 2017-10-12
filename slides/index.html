@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>reveal-md</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/white.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+          <link rel="stylesheet" href="./assets/style.css">
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
+
+<img src="forms-logo.png" />
+
+<aside class="notes"><p>Всем привет. Наверно все уже догадались чем занимается наша команда, если кто не смог прочитать, то тут написано &quot;Формы&quot; и как бы странно это не звучало, но команда &quot;Формы&quot; делает формы, и я пожалуй мог бы закончить свой рассказ на этом замечательном моменте, но регламент требует рассказать несколько более подробно.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Пользователи Форм
+
+- KeWeb
+- Отчет.ру
+- КЭМБ
+- Бухгалтерия
+- РПН
+- КОПФ
+- Документооборот
+- Метрика
+- Декларант
+- Диадок *(на подходе)*<!-- .element: style="color: #808080; font-size: 70%;" -->
+
+<aside class="notes"><p>Мы являемся частью Экстерна, но в отличии от того же KeWeb&#39;а мы сервисная команда, развивающая различные сервисы работы с формами, которыми пользуются не только в Экстерне, но и в других командах контура.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Команда Форм
+
+- 40 человек<!-- .element: class="fragment" data-fragment-index="1" -->
+- 6 подкоманд<!-- .element: class="fragment" data-fragment-index="2" -->
+- 12 сервисов<!-- .element: class="fragment" data-fragment-index="3" -->
+- 16 тестовых площадок<!-- .element: class="fragment" data-fragment-index="4" -->
+- 556 форм (220 в 2017 году)<!-- .element: class="fragment" data-fragment-index="5" -->
+
+<aside class="notes"><p>Наша команда достаточно многочисленная. На текущий момент нас 40 человек. Которые в свою очередь разделены на 6 подкоманд со своими зонами ответствености. И все вместе мы развиваем и поддерживаем 12 различных сервисов. Используя 16 тестовых площадок. Выпущено порядка 556 форм, из них 220 было выпущено/обновлено в 2017. Териториально мы располагаемся на 9-м этаже в 914 комнате напротив KeWeb&#39;а.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Сервисы Форм
+
+- **Forms.Api** – Единое API для работы с формами
+- **Flash.Props** – Сбор свойств
+- **Forms.Classification** – Резолвинг xml, инфа по формам
+- **Fsprinter** – Печать форм в PDF (HTML)
+- **CrossChecker** – Кросс-проверки
+- **Picklist** – Сервис справочников
+- **Highlander** и **Candy** – Редакторы форм
+
+<aside class="notes"><p>Все сервисы, которые мы развиваем преследуют единую цель. А именно, предоставление удобного и простого инструмента для загрузки файлов форм, сбора свойств, проведения авторасчетов и валидаций, печать и редактирование. На самом дело разграничение сервисов и их функциональность несколько сложнее чем описано тут. Например для внешнего потребителя тот же flash.props является частью forms.api, а Highlander это далеко не просто редактор. Но это всё детали. Вот на чем я действительно остановлюсь более подробно так это редакторы, так как именно эта часть имеет визуальную составляющую, а всё остальное это скучный шарповый бекенд.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Редакторы форм
+
+<img src="highlander.png"/>
+
+<!-- .element: class="fragment fade-right" data-fragment-index="1" style="width: 60%; float: left;" -->
+
+<img src="candy.png" />
+
+<!-- .element: class="fragment fade-left" data-fragment-index="2" style="width: 40%; float: left;" -->
+
+<aside class="notes"><p>У нас существует два редактора: Highlander и Candy. Каждый из них имеет свои достоинства и недостатки, о которых я сейчас расскажу.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Highlander
+
+<img src="hlknpok.png" />
+
+<aside class="notes"><p>На данный момент основной редактор форм, позволяющий создавать достаточно сложные формы с авторасчетами включающими в себя фильтры и группировку. Имеет отлаженный процесс по созданию и множество уже реализованных форм. Но как можно увидеть, основным недостатком Highlander является его очень недружелюбный интерфейс для пользователей. Именно по этой причине на его замену активно развивается другой редактор, Candy.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Candy
+
+<img src="cfknpok.png" />
+
+<aside class="notes"><p>А вот та же форма что и на прошлом слайде, но реализованая в новом-модном-молодежном редакторе Candy. Как можно заметить форма кардинально отличается. При реализации форм мы старемся учитывать общеконтуровские гайды и используем компоненты react-ui.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Встроенный протокол
+
+<img src="cflog.png" />
+
+<aside class="notes"><p>Одна из крутых фич, которая была выпущена не так давно является встраивание протокола контроля на страницу редактора. Это позволяет пользователю получить информацию об ошибках в форме не покидая редактор и возможность исправить их. Кстати хотелось бы отметить за основной вклад в реализацию этой фичи и поблагодарить нашего уже бывшего стажера &quot;Кирилла Протасова&quot;.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Технологии
+
+- React, Redux
+- Flow, Eslint, Stylelint
+- Mocha, Chai, Sinon, Enzyme, Storybook
+- Babel, Acorn, Webpack
+
+<aside class="notes"><p>По технологиям у нас всё достаточно стандартно. React-Redux. Для проверка кода используем Flow, Eslint и Stylelint. Для юнит тестирования используем Mocha+Chai+Sinon, Enzyme и Storybook для react компонентов. В функциональных тестах используем самописную утилитку совместно с Mocha. При сборке форм активно применяем кодогенерацию с помощью Babel и далее собираем всё Webpack&#39;ом. Более подробно о процессе создания форм я расскажу на одной из следующих летучек.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+### Планы и ярмарка возможностей
+
+- Редактирование больших объемов данных
+- Конструктор форм для Candy
+- Новая механика авторасчетов
+- Сбор пользовательских метрик
+</script></section><section  data-markdown><script type="text/template">
+## Спасибо
+
+https://wkich.github.io/candy/slides/ - презентация</script></section></div>
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {"transition":"slide"};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+            Reveal.initialize(options);
+        </script>
+    </body>
+</html>
